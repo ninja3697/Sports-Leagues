@@ -1,69 +1,26 @@
-# React + TypeScript + Vite
+# Sports Leagues
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page application (SPA) that consumes the [All Leagues API](https://www.thesportsdb.com/api/v1/json/3/all_leagues.php) and displays the sports leagues with filtering options by name and sport. On clicking a league card, the latest badge of the selected league is shown using the info from the [Search Seaspm API](https://www.thesportsdb.com/api/v1/json/3/search_all_seasons.php?badge=1&id=<id>).
 
-Currently, two official plugins are available:
+![](demo/demo.gif)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tools and technologies used to build this project are:
 
-## Expanding the ESLint configuration
+- Typescipt as programming language
+- React for building UI components and logic handling
+- Axios for data fetching
+- Tailwind CSS for styling
+- ChatGPT AI for static design generation, and
+- Vite for build setup and bundling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To run this project in production mode, first build the project using the following command:
 
-```js
-export default tseslint.config([
-	globalIgnores(["dist"]),
-	{
-		files: ["**/*.{ts,tsx}"],
-		extends: [
-			// Other configs...
-
-			// Remove tseslint.configs.recommended and replace with this
-			...tseslint.configs.recommendedTypeChecked,
-			// Alternatively, use this for stricter rules
-			...tseslint.configs.strictTypeChecked,
-			// Optionally, add this for stylistic rules
-			...tseslint.configs.stylisticTypeChecked,
-
-			// Other configs...
-		],
-		languageOptions: {
-			parserOptions: {
-				project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-				tsconfigRootDir: import.meta.dirname,
-			},
-			// other options...
-		},
-	},
-]);
+```
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then, deploy the application using the fololwing command:
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default tseslint.config([
-	globalIgnores(["dist"]),
-	{
-		files: ["**/*.{ts,tsx}"],
-		extends: [
-			// Other configs...
-			// Enable lint rules for React
-			reactX.configs["recommended-typescript"],
-			// Enable lint rules for React DOM
-			reactDom.configs.recommended,
-		],
-		languageOptions: {
-			parserOptions: {
-				project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-				tsconfigRootDir: import.meta.dirname,
-			},
-			// other options...
-		},
-	},
-]);
+```
+npm run preview
 ```
