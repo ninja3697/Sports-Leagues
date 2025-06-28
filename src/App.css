@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+html {
+  font-size: 100%;
+}
+
+#root {
+  @apply max-w-[1280px] mx-auto text-center lg:px-8;
+}
