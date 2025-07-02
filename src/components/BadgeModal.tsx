@@ -17,9 +17,9 @@ const BadgeModal = (props: BadgeModalProps) => {
 	const modalRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		document.addEventListener("mousedown", hanldeOutsideClick);
+		document.addEventListener("mousedown", handleOutsideClick);
 		fetchLatestSeason();
-		return () => document.removeEventListener("mousedown", hanldeOutsideClick);
+		return () => document.removeEventListener("mousedown", handleOutsideClick);
 	}, []);
 
 	const fetchLatestSeason = async () => {
@@ -52,17 +52,17 @@ const BadgeModal = (props: BadgeModalProps) => {
 		}
 	};
 
-	const hanldeOutsideClick = (e: MouseEvent) => {
+	const handleOutsideClick = (e: MouseEvent) => {
 		if (modalRef.current && !modalRef.current.contains(e.target as Node))
 			onClose();
 	};
 
 	return (
-		<div
-			className="fixed inset-0 bg-black/50 flex justify-center items-center z-50"
-			ref={modalRef}
-		>
-			<div className="bg-white p-6 rounded-xl shadow-xl max-w-[calc(100vw)] w-xl">
+		<div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+			<div
+				className="bg-white p-6 rounded-xl shadow-xl max-w-[calc(100vw)] w-xl"
+				ref={modalRef}
+			>
 				<div className="flex items-center justify-between mb-4">
 					<span className="font-semibold">
 						{league.strLeague}'s Latest Badge

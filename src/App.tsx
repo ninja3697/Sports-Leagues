@@ -1,12 +1,12 @@
 import { useEffect, useReducer, useRef, useState } from "react";
-import "./App.css";
 import BadgeModal from "./components/BadgeModal";
 import Header from "./components/Header";
 import LeaguesGrid from "./components/LeaguesGrid";
 import { getAllLeagues } from "./services/data.services";
 import { League } from "./types/data";
-import { filterLeagues, mergeStateReducer } from "./utils/app.utils";
 import { LeaguesFilter } from "./types/app";
+import { filterLeagues, mergeStateReducer } from "./utils/app.utils";
+import "./App.css";
 
 function App() {
 	const [loading, setLoading] = useState(true);
@@ -51,7 +51,7 @@ function App() {
 	return (
 		<div className="min-h-screen bg-gray-100 text-gray-900">
 			{loading ? (
-				<div className="flex justify-center items-center h-[calc(100vh)]">
+				<div className="flex justify-center items-center h-screen">
 					<span className="animate-spin w-16 h-16 border-4 border-x-black border-y-transparent rounded-[50%]" />
 				</div>
 			) : (

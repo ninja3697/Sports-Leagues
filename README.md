@@ -1,6 +1,6 @@
 # Sports Leagues
 
-A single-page application (SPA) that consumes the [All Leagues API](https://www.thesportsdb.com/api/v1/json/3/all_leagues.php) and displays the sports leagues with filtering options by name and sport. On clicking a league card, the latest badge of the selected league is shown using the info from the [Search Seaspm API](https://www.thesportsdb.com/api/v1/json/3/search_all_seasons.php?badge=1&id=<id>).
+A single-page application (SPA) that consumes the [All Leagues API](https://www.thesportsdb.com/api/v1/json/3/all_leagues.php) and displays the sports leagues with filtering options by name and sport. On clicking a league card, the latest badge of the selected league is shown using the info from the [Search Season API](https://www.thesportsdb.com/api/v1/json/3/search_all_seasons.php?badge=1&id=<id>).
 
 ![](demo/demo.gif)
 
